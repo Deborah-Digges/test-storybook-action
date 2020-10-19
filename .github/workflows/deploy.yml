@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: deborah-digges/deploy-storybook-action@v1.3
-        with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Deploy storybook to Github Pages
+        run: npm run deploy-storybook --branch gh-pages -- --ci
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
