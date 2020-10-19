@@ -9,7 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: deborah-digges/deploy-storybook-action@v1.0
+      - uses: actions/checkout@v1
+      - uses: deborah-digges/deploy-storybook-action@v1.1
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
 
