@@ -13,7 +13,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: echo
-        run: REMOTE=`git config --get remote.origin.url` && echo $REMOTE
+        run: REMOTE=`git config --get remote.origin.url` && echo $REMOTE && git config --list
 
       # - name: Deploy storybook to Github Pages
       #   run: npm run deploy-storybook --branch gh-pages -- --ci
