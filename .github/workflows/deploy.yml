@@ -12,8 +12,12 @@ jobs:
       - uses: actions/checkout@v1
       - name: Install dependencies
         run: npm install
+      # - name: Deploy storybook to Github Pages
+      #   run: npm run deploy-storybook --branch gh-pages -- --ci
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Deploy storybook to Github Pages
-        run: npm run deploy-storybook --branch gh-pages -- --ci
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        uses: deborah-digges/deploy-storybook-action/v10.0
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
 
