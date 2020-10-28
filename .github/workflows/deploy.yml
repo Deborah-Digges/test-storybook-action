@@ -17,7 +17,7 @@ jobs:
       #   env:
       #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Deploy storybook to Github Pages
-        uses: deborah-digges/deploy-storybook-action/v10.0
+        uses: deborah-digges/deploy-storybook-action@v10.0
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
 
