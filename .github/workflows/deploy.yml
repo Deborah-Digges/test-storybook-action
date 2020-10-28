@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Install dependencies
         run: npm install
       # - name: Deploy storybook to Github Pages
@@ -19,5 +19,5 @@ jobs:
       - name: Deploy storybook to Github Pages
         uses: deborah-digges/deploy-storybook-action@v11.0
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          access-token: ${{ secrets.GITHUB_TOKEN }}
 
