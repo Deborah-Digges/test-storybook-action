@@ -22,5 +22,5 @@ jobs:
       - name: Deploy storybook to Github Pages
         uses: deborah-digges/deploy-storybook-action@v11.0
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
+          access-token: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
 
