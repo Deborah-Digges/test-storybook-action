@@ -12,14 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: npm install
-      - name: echo
-        run: REMOTE=`git config --get remote.origin.url` && echo $REMOTE && git config --list
-
-      # - name: Deploy storybook to Github Pages
-      #   run: npm run deploy-storybook --branch gh-pages -- --ci
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Deploy storybook to Github Pages
-        uses: deborah-digges/deploy-storybook-action@v13.0
+        uses: deborah-digges/deploy-storybook-action@v14.0
         with:
           access-token: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
